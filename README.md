@@ -47,7 +47,7 @@ The `common-logging` library contains the logging configuration shared between t
 
 ## Request flow traced
 
-![Request Flow](images/Jaeger-Trace.png?raw=true)
+![Request Flow](images/Request-Flow.png?raw=true)
 
 1. The trace starts with a call to the `POST /order` call to the `order-service` to place an order
 2. The `order-service` checks with `inventory-service` if items are available for the order to be placed by calling the `GET /inventory` API
@@ -71,7 +71,7 @@ To run the request mentioned above and trace it:
     ```
 3. Visit the jaeger dashboard on `http://localhost:16686`. Under the search tab select **order-service** -> Click on **Find Traces** -> From the results click on **order-service: POST /order**. You should be able to visualize the request trace as shown below:
 
-   ![Jaeger Trace](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+   ![Jaeger Trace](images/Jaeger-Trace.png?raw=true)
 
 4. Capture the trace id from the URL which is in the format `http://localhost:16686/trace/<trace_id>`
 5. Head over to the splunk dashboard at `http://localhost:8000/`. Go to **Search & Reporting** app -> In the search query paste the following splunk query to view the logs threaded by the trace id captured in Step 4: `index="main" | spath trace_id | search trace_id="35341aa5fa30ee24f9b5e07b12f14c12"`
