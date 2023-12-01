@@ -47,7 +47,7 @@ The `common-logging` library contains the logging configuration shared between t
 
 ## Request flow traced
 
-![Request Flow](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Request Flow](images/Jaeger-Trace.png?raw=true)
 
 1. The trace starts with a call to the `POST /order` call to the `order-service` to place an order
 2. The `order-service` checks with `inventory-service` if items are available for the order to be placed by calling the `GET /inventory` API
