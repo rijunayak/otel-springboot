@@ -74,4 +74,4 @@ To run the request mentioned above and trace it:
    ![Jaeger Trace](images/Jaeger-Trace.png?raw=true)
 
 4. Capture the trace id from the URL which is in the format `http://localhost:16686/trace/<trace_id>`
-5. Head over to the splunk dashboard at `http://localhost:8000/`. Login with username **admin** and password **password** -> Go to **Search & Reporting** app -> In the search query paste the following splunk query to view the logs threaded by the trace id captured in Step 4: `index="main" | spath trace_id | search trace_id="35341aa5fa30ee24f9b5e07b12f14c12"`
+5. Head over to the splunk dashboard at `http://localhost:8000/`. Login with username **"admin"** and password **"password"** -> Go to **Search & Reporting** app -> In the search query paste the following splunk query to view the logs threaded by the trace id captured in Step 4: `index="main" | spath trace_id | search trace_id="35341aa5fa30ee24f9b5e07b12f14c12"`
