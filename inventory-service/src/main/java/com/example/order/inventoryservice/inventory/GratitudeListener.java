@@ -20,7 +20,7 @@ public class GratitudeListener {
     @RabbitListener(queues = {"q.gratitude"})
     public void acknowledgeGratitude(String gratitude) {
         log.info("****************** Received gratitude: \"" + gratitude + "\" ***********************");
-        log.info("****************** Getting Order ***********************");
+        log.info("****************** Acknowledge Gratitude ***********************");
         String response = restTemplate.getForObject(ORDER_GRATITUDE_URL, String.class);
         log.info("****************** Gratitude Acknowledgement Response: " + response + " ***********************");
     }
